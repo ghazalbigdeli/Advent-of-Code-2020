@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/1
 
 def main():
-    inputFile = open("input.txt","r")
+    inputFile = open("C:\\Users\ghaza\Desktop\Advent of Code\Day1\input.txt","r")
 
     # create array of numbers
     input = []
@@ -20,19 +20,19 @@ def twoSum(input):
     input.sort()
     
     # get the two pointers
-    left = 0
-    right = len(input) - 1
+    l = 0
+    r = len(input) - 1
 
     # loop to find the sum, adjust accordingly each time
-    while (left < right):
-        if (input[left] + input[right] == 2020):
-            print("The numbers are: ", input[left], "and ", input[right])
-            print("Their product is ", input[left] * input[right])   
+    while (l < r):
+        if (input[l] + input[r] == 2020):
+            print("The numbers are: ", input[l], "and ", input[r])
+            print("Their product is ", input[l] * input[r])   
             return
-        elif (input[left] + input[right] > 2020):
-            right -= 1
-        elif (input[left] + input[right] < 2020):
-            left += 1
+        elif (input[l] + input[r] > 2020):
+            r -= 1
+        elif (input[l] + input[r] < 2020):
+            l += 1
 
 # method for three numbers
 # expand on the two-pointer technique by fixing one of the numbers and searching for the other two
