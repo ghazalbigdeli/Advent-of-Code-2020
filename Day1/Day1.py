@@ -2,7 +2,8 @@
 # https://adventofcode.com/2020/day/1
 
 def main():
-    inputFile = open("C:\\Users\ghaza\Desktop\Advent of Code\Day1\input.txt","r")
+    # adjust directory accordingly
+    inputFile = open("input.txt","r")
 
     # create array of numbers
     input = []
