@@ -3,21 +3,31 @@
 
 def main():
     # adjust directory accordingly
-    inputFile = open("input.txt","r")
+    input_file = open("input.txt","r")
 
     # create array of passwords
     input = []
-    for password in inputFile:
+    for password in input_file:
         input.append(password)
 
     # run algorithms
-    numValidPartOne(input)
-    numValidPartTwo(input)
+    print("Part one - number of valid passwords is:", numValidPartOne(input))
+    print("Part two - number of valid passwrods is:", numValidPartTwo(input))
 
 # part one
-# go through each password and check if it passes the policy
 def numValidPartOne(input):
-    validCount = 0
+    '''
+    Determines the number of valid passwords based on the policy
+    (must contain the specified letter within the min-max range)
+
+        Parameters:
+            input : list of passwords and their policy
+
+        Returns: 
+            valid_count : number of valid passwords
+
+    '''
+    valid_count = 0
 
     for line in input:
         # split input line and range line
@@ -35,14 +45,24 @@ def numValidPartOne(input):
 
         # if the count is within the correct range, increment the count
         if (count >= min and count <= max):
-            validCount += 1
+            valid_count += 1
 
-    print("Number of valid passwords is: ", validCount)
+    return valid_count
 
 # part two
-# go through each password and check if it passes the policy
 def numValidPartTwo(input):
-    validCount = 0
+    '''
+    Determines the number of valid passwords based on the policy
+    (specificed letter must appear at only one of the given indices)
+
+        Parameters:
+            input : list of passwords and their policy
+        
+        Returns:
+            valid_count : number of valid passwords
+
+    '''
+    valid_count = 0
 
     for line in input:
         # split input line and position line
@@ -57,10 +77,9 @@ def numValidPartTwo(input):
 
         # if the letter appears exclusively in one of the valid positions, increment the count
         if (bool(password[pos1] == letter) ^ bool(password[pos2] == letter)):
-            validCount += 1
+            valid_count += 1
 
-    print("Number of valid passwords is: ", validCount)
-
+    return valid_count
 
 if __name__ == "__main__":
     main()

@@ -11,12 +11,21 @@ def main():
         input.append(int(number))
     
     # run algorithms
-    twoSum(input)
-    threeSum(input)
+    print("Part one - the product is", twoSum(input))
+    print("Part two - the product is", threeSum(input))
 
-# method for two numbers
-# uses the two-pointer technique
+# part one
 def twoSum(input):
+    '''
+    Determines and prints the product of the two numbers that add up to 2020
+    Using two-pointer technique
+
+        Parameters:
+            input : list of numbers
+        
+        Returns:
+            product : product of the two numbers
+    '''
     # sort the array
     input.sort()
     
@@ -28,8 +37,8 @@ def twoSum(input):
     while (l < r):
         if (input[l] + input[r] == 2020):
             print("The numbers are: ", input[l], "and ", input[r])
-            print("Their product is ", input[l] * input[r])   
-            return
+            product = input[l] * input[r]   
+            return product
         elif (input[l] + input[r] > 2020):
             r -= 1
         elif (input[l] + input[r] < 2020):
@@ -38,6 +47,16 @@ def twoSum(input):
 # method for three numbers
 # expand on the two-pointer technique by fixing one of the numbers and searching for the other two
 def threeSum(input):
+    '''
+    Determines and prints the product of the three numbers that add up to 2020
+    Expands on two-pointer technique by fixing one of the numbers
+
+        Parameters:
+            input : list of numbers
+        
+        Returns:
+            product : product of the three numbers
+    '''
     # sort the array
     input.sort()
 
@@ -50,8 +69,8 @@ def threeSum(input):
         while (l < r):
             if (input[x] + input[l] + input[r] == 2020):
                 print("The numbers are: ", input[x], "and ", input[l], "and ", input[r])
-                print("Their product is ", input[x] * input[l] * input[r])
-                return
+                product = input[x] * input[l] * input[r]
+                return product
             elif (input[x] + input[l] + input[r] > 2020):
                 r -= 1
             elif (input[x] + input[l] + input[r] < 2020):
