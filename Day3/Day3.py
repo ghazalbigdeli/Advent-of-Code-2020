@@ -13,11 +13,7 @@ def main():
     # create array of rows of trees (map)
     input = []
     for row in input_file:
-        # removing line break since .strip() doesn't work
-        if (len(row) > num_rows):
-            input.append(row[0:num_rows])
-        else:
-            input.append(row)
+        input.append(row.replace('\n', ''))
     
     # calculate how many columns are needed
     num_rows = len(input)

@@ -11,7 +11,7 @@ def main():
     for line in input_file:
         if (line == '\n'): # new passport
             passport = passport.strip()
-            input.append(passport)s
+            input.append(passport)
             passport = ''
         else:
             passport += line.replace('\n', ' ')
