@@ -120,12 +120,12 @@ def validPassportsTwo(input):
 
                 bad_letters = 'ghijklmnopqrstuvwxyz'
                 for char in value:
-                    if char in bad_letters:
+                    if (char in bad_letters):
                         valid = False
                         break
             # eye colour
             elif (field == 'ecl'):
-                if (not(value == 'amb' or value == 'blu' or value == 'brn' or value == 'gry' or value == 'grn' or value == 'hzl' or value == 'oth')):
+                if (not(value in 'amb blu brn gry grn hzl oth')):
                     valid = False
                     break
             # passport id
