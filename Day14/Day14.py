@@ -23,6 +23,7 @@ def initializationProgram(input):
     memory = {}
     mask = 0
 
+    # go through each instruction and apply
     for instruction in input:
         if (instruction.count('mask') == 1): # new mask
             mask = instruction[7:]
@@ -32,7 +33,7 @@ def initializationProgram(input):
 
         address = int(instruction[4:(instruction.index(']'))])
         dec_value = int(instruction[instruction.index('=') + 2:])
-
+        
         memory[address] = (dec_value | on_mask) & off_mask
     
     sum = 0
