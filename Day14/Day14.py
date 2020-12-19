@@ -43,7 +43,6 @@ def initializationProgram(input):
     return sum
 
 # part two
-# If the bitmask bit is 0, the corresponding memory address bit is unchanged.
 # If the bitmask bit is 1, the corresponding memory address bit is overwritten with 1.
 # If the bitmask bit is X, the corresponding memory address bit is floating.
 def addressDecoder(input):
@@ -61,9 +60,7 @@ def addressDecoder(input):
         
         dec_value = int(instruction[instruction.index('=') + 2:])
         address = bin(int(instruction[4:(instruction.index(']'))]) | on_mask)
-
-        # convert address to list for ease of changing, fill with 0's
-        address = list(str(address[2:]).zfill(36))
+        address = list(str(address[2:]).zfill(36)) # convert to list for ease of changing
 
         # create list of combinations for the floating variables
         combinations = list(itertools.product([0,1], repeat=len(floating_index)))
