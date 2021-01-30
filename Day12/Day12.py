@@ -13,7 +13,7 @@ def main():
     # part one
     print("Manhattan distance in part one:", runInstructionsOne(input))
 
-    # part two
+    # part two  
     print("Manhattan distance in part two:", runInstructionsTwo(input))
 
 def runInstructionsOne(instructions):
